@@ -1,14 +1,50 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controllers;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JPanel;
+import views.ViewMain;
 
-/**
- *
- * @author r3n0
- */
-public class ControllerMain {
+public class ControllerMain implements ActionListener{
     
+    ViewMain viewMain;
+    JPanel views [];
+    
+    public ControllerMain (ViewMain viewMain, JPanel [] views ) {
+        
+        this.viewMain = viewMain;
+        this.views = views;
+        this.viewMain.jmi_clientes.addActionListener(this);
+        
+        init_View();
+    }
+    
+    @Override 
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource () == viewMain.jmi_clientes)
+            jmi_clientesActionPerformed();
+        
+        if (e.getSource () == viewMain.jmi_proveedores)
+            jmi_proveedoresActionPerformed();
+    }
+    
+    private void jmi_clientesActionPerformed() {
+        this.viewMain.setContentPane(views [0]);
+        this.viewMain.revalidate();
+        this.viewMain.repaint();    
+    }
+    
+    private void jmi_proveedoresActionPerformed() {
+        this.viewMain.setContentPane(views [1]);
+        this.viewMain.revalidate();
+        this.viewMain.repaint();
+    }
+
+    
+    private void init_View() {
+        this.viewMain.setTitle("Tienda");
+        this.viewMain.setLocationRelativeTo(null);
+        this.viewMain.setVisible(true);
+    }
+
+
 }

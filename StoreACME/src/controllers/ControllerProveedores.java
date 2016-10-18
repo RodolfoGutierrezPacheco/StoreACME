@@ -5,6 +5,9 @@
  */
 package controllers;
 
+import models.ModelProveedores;
+import views.ViewProveedores;
+
 /**
  *
  * @author r3n0

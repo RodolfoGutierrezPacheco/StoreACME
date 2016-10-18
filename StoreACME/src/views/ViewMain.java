@@ -29,11 +29,15 @@ public class ViewMain extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jmi_clientes = new javax.swing.JMenuItem();
         jmi_proveedores = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jMenu1.setText("File");
+
+        jmi_clientes.setText("Clientes");
+        jMenu1.add(jmi_clientes);
 
         jmi_proveedores.setText("Proveedores");
         jMenu1.add(jmi_proveedores);
@@ -95,6 +99,7 @@ public class ViewMain extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jmi_proveedores;
+    public javax.swing.JMenuItem jmi_clientes;
+    public javax.swing.JMenuItem jmi_proveedores;
     // End of variables declaration//GEN-END:variables
 }
