@@ -50,6 +50,11 @@ public class ControllerClientes implements ActionListener {
             } catch (Exception err) {
                 JOptionPane.showMessageDialog(null, "Por favor llena todos los campos" + err.getLocalizedMessage());
             }
+        }   
+            
+        if (e.getSource () == this.viewClientes.jbtn_borrar) {
+            
+        }
             
         if (e.getSource () == this.viewClientes.jbtn_editar)
             try {
@@ -69,7 +74,30 @@ public class ControllerClientes implements ActionListener {
                 System.out.println(sql);
             } catch (Exception err) {
                 JOptionPane.showMessageDialog(null, "Por favor llena todos los campos" + err.getLocalizedMessage());
-            }       
-        }       
+            }
+        
+        if (e.getSource () == this.viewClientes.jbtn_buscar) {
+            
+        }
+        
+        if (e.getSource () == this.viewClientes.jbtn_guardar) {
+            
+        }
+        
+        if (e.getSource () == this.viewClientes.jbtn_first) {
+            
+        }
+        
+        if (e.getSource () == this.viewClientes.jbtn_previous) {
+            
+        }
+        
+        if(e.getSource () == this.viewClientes.jbtn_next) {
+
+        }
+        
+        if (e.getSource () == this.viewClientes.jbtn_latest) {
+            
+        }                 
     }
 }

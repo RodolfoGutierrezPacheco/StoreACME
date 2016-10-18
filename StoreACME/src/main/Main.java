@@ -38,6 +38,7 @@ public class Main {
         views [0] = viewClientes;
         views [1] = viewProveedores;
         views [2] = viewProductos;
+        
         ViewMain viewMain = new ViewMain();
         ControllerMain controllerMain = new ControllerMain(viewMain, views);
     }  

@@ -31,6 +31,8 @@ public class ViewClientes extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jl_nombre = new javax.swing.JLabel();
         jtf_nombre = new javax.swing.JTextField();
@@ -58,11 +60,13 @@ public class ViewClientes extends javax.swing.JPanel {
         jbtn_borrar = new javax.swing.JButton();
         jbtn_editar = new javax.swing.JButton();
         jbtn_buscar = new javax.swing.JButton();
-        jbtn_principal = new javax.swing.JButton();
-        jbtn_anterior = new javax.swing.JButton();
-        jbtn_siguiente = new javax.swing.JButton();
-        jbtn_final = new javax.swing.JButton();
+        jbtn_first = new javax.swing.JButton();
+        jbtn_previous = new javax.swing.JButton();
+        jbtn_next = new javax.swing.JButton();
+        jbtn_latest = new javax.swing.JButton();
         jbtn_guardar = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -89,6 +93,19 @@ public class ViewClientes extends javax.swing.JPanel {
             }
         ));
         jScrollPane2.setViewportView(jTable2);
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
 
@@ -175,15 +192,28 @@ public class ViewClientes extends javax.swing.JPanel {
 
         jbtn_buscar.setText("Buscar");
 
-        jbtn_principal.setText("<<");
+        jbtn_first.setText("<<");
 
-        jbtn_anterior.setText("<");
+        jbtn_previous.setText("<");
 
-        jbtn_siguiente.setText(">");
+        jbtn_next.setText(">");
 
-        jbtn_final.setText(">>");
+        jbtn_latest.setText(">>");
 
         jbtn_guardar.setText("Guardar");
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nombre Completo", "Datos", "Domicilio", "Lugar Origen"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable4);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -192,6 +222,9 @@ public class ViewClientes extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -253,14 +286,14 @@ public class ViewClientes extends javax.swing.JPanel {
                                 .addComponent(jbtn_guardar))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jtf_estado, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jbtn_anterior)
-                                .addGap(18, 18, 18)
-                                .addComponent(jbtn_principal)
-                                .addGap(18, 18, 18)
-                                .addComponent(jbtn_final)
+                                .addGap(26, 26, 26)
+                                .addComponent(jbtn_first)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jbtn_siguiente)))
+                                .addComponent(jbtn_previous)
+                                .addGap(18, 18, 18)
+                                .addComponent(jbtn_next)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jbtn_latest)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -320,28 +353,30 @@ public class ViewClientes extends javax.swing.JPanel {
                         .addComponent(jbtn_buscar)
                         .addGap(18, 18, 18)
                         .addComponent(jbtn_guardar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtf_ciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtf_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbtn_final)
-                    .addComponent(jbtn_siguiente)
-                    .addComponent(jbtn_principal)
-                    .addComponent(jbtn_anterior))
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jtf_ciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtf_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbtn_previous)
+                        .addComponent(jbtn_first))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jbtn_next)
+                        .addComponent(jbtn_latest)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 594, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -362,17 +397,21 @@ public class ViewClientes extends javax.swing.JPanel {
     public javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    public javax.swing.JTable jTable4;
     public javax.swing.JButton jbtn_agregar;
-    private javax.swing.JButton jbtn_anterior;
     public javax.swing.JButton jbtn_borrar;
     public javax.swing.JButton jbtn_buscar;
     public javax.swing.JButton jbtn_editar;
-    private javax.swing.JButton jbtn_final;
+    public javax.swing.JButton jbtn_first;
     public javax.swing.JButton jbtn_guardar;
-    private javax.swing.JButton jbtn_principal;
-    private javax.swing.JButton jbtn_siguiente;
+    public javax.swing.JButton jbtn_latest;
+    public javax.swing.JButton jbtn_next;
+    public javax.swing.JButton jbtn_previous;
     private javax.swing.JLabel jl_apMaterno;
     public javax.swing.JLabel jl_apPaterno;
     private javax.swing.JLabel jl_nombre;
