@@ -39,7 +39,11 @@ public class ControllerMain implements ActionListener{
         this.viewMain.repaint();
     }
 
-    
+    private void jmi_productosActionPerformed() {
+        this.viewMain.setContentPane(views [2]);
+        this.viewMain.revalidate();
+        this.viewMain.repaint();
+    }
     private void init_View() {
         this.viewMain.setTitle("Tienda");
         this.viewMain.setLocationRelativeTo(null);
