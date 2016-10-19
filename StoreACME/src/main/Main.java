@@ -20,7 +20,7 @@ public class Main {
     ControllerProductos controllerProductos;
     
     
-    public static void main ( String [] amh) {
+    public static void main ( String [] car) {
         
         ModelClientes modelClientes = new ModelClientes();
         ViewClientes viewClientes = new ViewClientes();
