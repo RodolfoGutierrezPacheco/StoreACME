@@ -27,7 +27,7 @@ public class ViewMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jl_text1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jmi_clientes = new javax.swing.JMenuItem();
@@ -37,11 +37,11 @@ public class ViewMain extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
 
-        jLabel1.setBackground(new java.awt.Color(0, 153, 153));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/la-imagen-d-fuentes-administrador-de-ingles-de-material_38-5456.jpg"))); // NOI18N
-        jLabel1.setText("Bienvenido al sistema");
+        jl_text1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_text1.setText("Bienvenido elige en que quieres trabajar...");
+        jl_text1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jMenuBar1.setBackground(new java.awt.Color(0, 102, 102));
+        jMenuBar1.setBackground(new java.awt.Color(190, 253, 253));
 
         jMenu1.setBackground(new java.awt.Color(204, 255, 255));
         jMenu1.setText("Elige el perfil a controlar");
@@ -63,14 +63,14 @@ public class ViewMain extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 639, Short.MAX_VALUE)
+            .addComponent(jl_text1, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(125, 125, 125)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addGap(112, 112, 112)
+                .addComponent(jl_text1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         pack();
@@ -113,9 +113,9 @@ public class ViewMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel jl_text1;
     public javax.swing.JMenuItem jmi_clientes;
     public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_proveedores;
