@@ -14,7 +14,8 @@ public class ControllerMain implements ActionListener{
         this.viewMain = viewMain;
         this.views = views;
         this.viewMain.jmi_clientes.addActionListener(this);
-        
+        this.viewMain.jmi_productos.addActionListener(this);
+        this.viewMain.jmi_proveedores.addActionListener(this);
         init_View();
     }
     
@@ -25,6 +26,9 @@ public class ControllerMain implements ActionListener{
         
         if (e.getSource () == viewMain.jmi_proveedores)
             jmi_proveedoresActionPerformed();
+        
+        if (e.getSource () == viewMain.jmi_productos)
+            jmi_productosActionPerformed();
     }
     
     private void jmi_clientesActionPerformed() {
@@ -39,7 +43,11 @@ public class ControllerMain implements ActionListener{
         this.viewMain.repaint();
     }
 
-    
+    private void jmi_productosActionPerformed() {
+        this.viewMain.setContentPane(views [2]);
+        this.viewMain.revalidate();
+        this.viewMain.repaint();
+    }
     private void init_View() {
         this.viewMain.setTitle("Tienda");
         this.viewMain.setLocationRelativeTo(null);
