@@ -21,6 +21,7 @@ public class ControllerMain implements ActionListener{
     
     @Override 
     public void actionPerformed(ActionEvent e) {
+        
         if (e.getSource () == viewMain.jmi_clientes)
             jmi_clientesActionPerformed();
         
@@ -53,6 +54,4 @@ public class ControllerMain implements ActionListener{
         this.viewMain.setLocationRelativeTo(null);
         this.viewMain.setVisible(true);
     }
-
-
 }

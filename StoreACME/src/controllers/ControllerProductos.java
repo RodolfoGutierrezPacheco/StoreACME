@@ -90,40 +90,5 @@ public class ControllerProductos implements ActionListener{
                 this.viewProductos.jtf_descripcion.getText();    
         
             }
-        
-         public void eliminarRegistros(){
-        try{ 
-           st.executeUpdate("delete from tabla1 where id_tabla1="+this.jtf_id_tabla1.getText());
-
-           this.primerRegistro();
-
-       } catch(SQLException err){ 
-            JOptionPane.showMessageDialog(null,"Error "+err.getMessage()); 
-        } 
-
-    }
-     private void guadarRegistro() {        
-       try{ 
-             this.viewProductos.jtf_producto.getText();
-                this.viewProductos.jtf_marca.getText();
-                this.viewProductos.jtf_precio_compra.getText();
-                this.viewProductos.jtf_precio_venta.getText();
-                this.viewProductos.jtf_productos_existentes.getText();
-                this.viewProductos.jtf_descripcion.getText();
-
-            st.executeUpdate("Insert into productos (producto,marca,descripcion,precio_compra,precio_venta,productos_existentes,)"+" values ('"+ viewProductos.jtf_producto.getText() + "','" + viewProductos.jtf_marca.getText()+"','"+viewProductos.jtf_descripcion.getText() + "','" + viewProductos.jtf_precio_venta.getText()+"','"+viewProductos.jtf_precio_compra+"','"+viewProductos.jtf_productos_existentes);"); 
-
-            this.primerRegistro();
-
-        } catch(SQLException err)         { 
-            JOptionPane.showMessageDialog(null,"Error "+err.getMessage()); 
-        } 
-
-    }     
-         
-    }
+       }
 }
-
-
-
-
