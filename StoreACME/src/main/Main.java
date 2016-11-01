@@ -24,7 +24,7 @@ public class Main {
         
         ModelClientes modelClientes = new ModelClientes();
         ViewClientes viewClientes = new ViewClientes();
-        ControllerClientes controllerClientes = new ControllerClientes(viewClientes,modelClientes);
+        ControllerClientes controllerClientes = new ControllerClientes(viewClientes , modelClientes);
         
         ModelProductos modelProductos = new ModelProductos();
         ViewProductos viewProductos = new ViewProductos();
