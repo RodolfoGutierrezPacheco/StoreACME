@@ -4,11 +4,16 @@
  * and open the template in the editor.
  */
 package controllers;
+import javax.swing.table.DefaultTableModel;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.SQLException;
 import lib.Conection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,8 +27,12 @@ import models.ModelProductos;
 public class ControllerProductos implements ActionListener{
     public ViewProductos viewProductos;
     public ModelProductos modelProductos;
-    private Object Conn;
-    private Object sent;
+    
+    private Statement st;
+    private ResultSet rs;
+    Conection conection = new Conection ();
+    Connection pt = conection.conexion();
+    DefaultTableModel tabla;
     
    public ControllerProductos (ViewProductos viewClientes, ModelProductos modelProductos) {
         
@@ -35,9 +44,6 @@ public class ControllerProductos implements ActionListener{
         this.viewProductos.jbtn_editar.addActionListener(this);
         this.viewProductos.jbtn_buscar.addActionListener(this);
    }
-   
-   
-    
    
    
    private void limpiar(){
@@ -63,7 +69,10 @@ public class ControllerProductos implements ActionListener{
                this.viewProductos.jtf_precio_compra.setEditable(false);
                this.viewProductos.jtf_precio_venta.setEditable(false); 
                this.viewProductos.jtf_productos_existentes.setEditable(false); 
-}      
+} 
+    
+    
+   
     public void Llenar(){
     try{
         conection=Mysql.getConnection();
@@ -221,19 +230,6 @@ public void table(){
         Habilitar();
         }
  
-    private Statement cp;
-    private ResultSet rs;
-    Conection conection = new Conection ();
-    Connection pt = conection.conexion();
-   public void Conectar() {
-
-        try {
-            pt = DriverManager.getConnection("jdbc:mysql://localhost:3306/tienda_acme?user=root");
-            cp = pt.createStatement();
-            
-        } catch (SQLException err) {
-            JOptionPane.showMessageDialog(null, "Error " + err.getMessage());
-        }   
-    }
+   
              
 }
