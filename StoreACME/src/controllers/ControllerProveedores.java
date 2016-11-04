@@ -10,6 +10,15 @@ import java.awt.event.ActionListener;
 import models.ModelProveedores;
 import views.ViewProveedores;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.SQLException;
+import lib.Conection;
+
 /**
  *
  * @author r3n0
@@ -17,10 +26,16 @@ import views.ViewProveedores;
 public class ControllerProveedores implements ActionListener {
     ViewProveedores viewProveedores;
     ModelProveedores modelProveedores;
+    DefaultTableModel model;
+    Conection conection=new Conection();
+    Connection cn = conection.conexion();
     
 public ControllerProveedores (ModelProveedores modelProveedores, ViewProveedores viewProveedores)   {
     this.modelProveedores = modelProveedores;
     this.viewProveedores = viewProveedores;    
+    
+    this.viewProveedores.jtf_id.setVisible(false);
+    //mostrarDatos("");
     
     this.viewProveedores.jb_agregar.addActionListener(this);
     this.viewProveedores.jb_buscar.addActionListener(this);
@@ -34,3 +49,17 @@ public ControllerProveedores (ModelProveedores modelProveedores, ViewProveedores
         
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

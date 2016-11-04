@@ -47,7 +47,7 @@ create table detalle_ventas(
 	)ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 create table proveedores(
-	id_proveedor int(4) not null AUTO_INCREMENT,
+	id_proveedor int(4) PRIMARY KEY not null AUTO_INCREMENT,
 	nombre varchar(30) not null,
 	rfc varchar(15) not null,
 	calle varchar(20) not null,
@@ -58,7 +58,7 @@ create table proveedores(
 	nombre_contacto varchar(70) not null,
 	telefono int(15) not null,
 	e_mail varchar(40) not null
-	)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+	);
 
 create table compras(
 	id_compra int(4) not null AUTO_INCREMENT,
