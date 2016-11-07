@@ -52,8 +52,8 @@ public class ViewProveedores extends javax.swing.JPanel {
         jtf_colonia = new javax.swing.JTextField();
         jl_text11 = new javax.swing.JLabel();
         jl_text12 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jtf_apPaterno = new javax.swing.JTextField();
+        jtf_apMaterno = new javax.swing.JTextField();
         jtf_id = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jb_agregar = new javax.swing.JButton();
@@ -61,7 +61,7 @@ public class ViewProveedores extends javax.swing.JPanel {
         jb_buscar = new javax.swing.JButton();
         jb_editar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jt_tablaProveedores = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(0, 204, 204));
 
@@ -120,9 +120,9 @@ public class ViewProveedores extends javax.swing.JPanel {
 
         jl_text12.setText("Apellido Materno:");
 
-        jTextField1.setText("jTextField1");
+        jtf_apPaterno.setText("jTextField1");
 
-        jTextField2.setText("jTextField2");
+        jtf_apMaterno.setText("jTextField2");
 
         javax.swing.GroupLayout jp_informacionLayout = new javax.swing.GroupLayout(jp_informacion);
         jp_informacion.setLayout(jp_informacionLayout);
@@ -140,11 +140,11 @@ public class ViewProveedores extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addGroup(jp_informacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jl_text11)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jtf_apPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jp_informacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jl_text12)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jtf_apMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jp_informacionLayout.createSequentialGroup()
                                 .addGroup(jp_informacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jp_informacionLayout.createSequentialGroup()
@@ -199,8 +199,8 @@ public class ViewProveedores extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jp_informacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jtf_nombreProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jtf_apPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_apMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jp_informacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jl_text2)
@@ -282,7 +282,7 @@ public class ViewProveedores extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jt_tablaProveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -290,7 +290,7 @@ public class ViewProveedores extends javax.swing.JPanel {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jt_tablaProveedores);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -332,9 +332,6 @@ public class ViewProveedores extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     public javax.swing.JButton jb_agregar;
     public javax.swing.JButton jb_buscar;
     public javax.swing.JButton jb_editar;
@@ -354,6 +351,9 @@ public class ViewProveedores extends javax.swing.JPanel {
     private javax.swing.JLabel jl_titulo;
     private javax.swing.JPanel jp_informacion;
     private javax.swing.JPanel jp_titulo;
+    public javax.swing.JTable jt_tablaProveedores;
+    public javax.swing.JTextField jtf_apMaterno;
+    public javax.swing.JTextField jtf_apPaterno;
     public javax.swing.JTextField jtf_calle;
     public javax.swing.JTextField jtf_ciudad;
     public javax.swing.JTextField jtf_colonia;
