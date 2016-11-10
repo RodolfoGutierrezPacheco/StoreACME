@@ -60,6 +60,7 @@ public class ViewProveedores extends javax.swing.JPanel {
         jb_eliminar = new javax.swing.JButton();
         jb_buscar = new javax.swing.JButton();
         jb_editar = new javax.swing.JButton();
+        jb_guardar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_tablaProveedores = new javax.swing.JTable();
 
@@ -255,6 +256,8 @@ public class ViewProveedores extends javax.swing.JPanel {
         jb_editar.setText("Editar");
         jb_editar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        jb_guardar.setText("Guardar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -262,12 +265,13 @@ public class ViewProveedores extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jb_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jb_eliminar)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jb_agregar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jb_buscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jb_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24))
+                    .addComponent(jb_guardar))
+                .addGap(21, 21, 21))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,6 +283,8 @@ public class ViewProveedores extends javax.swing.JPanel {
                 .addComponent(jb_editar)
                 .addGap(18, 18, 18)
                 .addComponent(jb_eliminar)
+                .addGap(18, 18, 18)
+                .addComponent(jb_guardar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -316,7 +322,7 @@ public class ViewProveedores extends javax.swing.JPanel {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(310, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -336,6 +342,7 @@ public class ViewProveedores extends javax.swing.JPanel {
     public javax.swing.JButton jb_buscar;
     public javax.swing.JButton jb_editar;
     public javax.swing.JButton jb_eliminar;
+    public javax.swing.JButton jb_guardar;
     private javax.swing.JLabel jl_text1;
     private javax.swing.JLabel jl_text10;
     private javax.swing.JLabel jl_text11;

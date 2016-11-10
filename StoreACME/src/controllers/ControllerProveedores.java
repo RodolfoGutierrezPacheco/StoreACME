@@ -16,8 +16,11 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import lib.Conection;
 
 /**
@@ -90,7 +93,7 @@ void editar()   {
     }
     limpiar();
     guardar();
-    mostrardatos("");
+    mostrarDatos("");
 }
 
 void limpiar()  {
@@ -150,16 +153,139 @@ void guardar()  {
 void modificar()    {
     try {
      String sql="UPDATE proveedores nombre=?, ap_paterno=?, ap_materno=?, rfc=?, calle=?, no_calle=?, colonia=?, ciudad=?, estado=?, nombre_contacto=?, telefono=?, e_mail=?"+ "WHERE id_proveedor=?";   
-     
-     
+     int fila=viewProveedores.jt_tablaProveedores.getSelectedRow();
+     String dao=(String)viewProveedores.jt_tablaProveedores.getValueAt(fila, 0);
+        PreparedStatement preparedStatement=cn.prepareStatement(sql);
+        
+        preparedStatement.setString(1, viewProveedores.jtf_nombreProveedor.getText());
+        preparedStatement.setString(2, viewProveedores.jtf_apPaterno.getText());
+        preparedStatement.setString(3, viewProveedores.jtf_apMaterno.getText());
+        preparedStatement.setString(4, viewProveedores.jtf_rfc.getText());
+        preparedStatement.setString(5, viewProveedores.jtf_calle.getText());
+        preparedStatement.setString(6, viewProveedores.jtf_noCalle.getText());
+        preparedStatement.setString(7, viewProveedores.jtf_colonia.getText());
+        preparedStatement.setString(8, viewProveedores.jtf_ciudad.getText());
+        preparedStatement.setString(9, viewProveedores.jtf_estado.getText());
+        preparedStatement.setString(10, viewProveedores.jtf_nombreContacto.getText());
+        preparedStatement.setString(11, viewProveedores.jtf_telefono.getText());
+        preparedStatement.setString(12, viewProveedores.jtf_email.getText());
+        
+        preparedStatement.setString(1, dao);
+        int n=preparedStatement.executeUpdate();
+        
+        if(n>0) {
+            JOptionPane.showMessageDialog(viewProveedores, "Modificacion realizada con exito");
+        }
      
     }
+    catch(Exception modificar)  {
+        JOptionPane.showMessageDialog(viewProveedores, "Algo salio mal "+modificar.getMessage());
+    }
+    guardar();
+    limpiar();
+}
+
+void eliminar() {
+    try {
+        int fila=viewProveedores.jt_tablaProveedores.getSelectedRow();
+        String sql="DELETE * FROM proveedores WHERE id_cliente"+viewProveedores.jt_tablaProveedores.getValueAt(fila, 0);
+        st=cn.createStatement();
+        int n=st.executeUpdate(sql);
+        if(n>0) {
+            guardar();
+            JOptionPane.showMessageDialog(viewProveedores, "Registro borreado con exito");
+        }
+        
+    }
+    catch(Exception eliminar)   {
+        JOptionPane.showMessageDialog(viewProveedores, "Algo salio mal al eliminar datos "+eliminar.getMessage());
+    }
+}
+
+void mostrarDatos(String valor) {
+    DefaultTableModel tableModel=new DefaultTableModel();
+    tableModel.addColumn("id_proveedor");
+    tableModel.addColumn("nombre");
+    tableModel.addColumn("ap_paterno");
+    tableModel.addColumn("ap_materno");
+    tableModel.addColumn("rfc");
+    tableModel.addColumn("calle");
+    tableModel.addColumn("colonia");
+    tableModel.addColumn("ciudad");
+    tableModel.addColumn("estado");
+    tableModel.addColumn("nombre_contacto");
+    tableModel.addColumn("telefono");
+    tableModel.addColumn("e_mail");
+    
+    viewProveedores.jt_tablaProveedores.setModel(tableModel);
+    String sql="";
+    if(valor.equals(""))    {
+        sql="SELECT * FROM proveedores";
+    }
+    else    {
+        sql="SELECT * FROM proveedores WHERE id_proveedor'"+valor+"'";
+    }
+    String[] datos=new String[12];
+    
+    try {
+        Statement statement=cn.createStatement();
+        ResultSet resultSet=st.executeQuery("SELECT * FROM proveedores");
+        
+        while(resultSet.next()) {
+            datos[0]=resultSet.getString(1);
+            datos[1]=resultSet.getString(2);
+            datos[2]=resultSet.getString(3);
+            datos[3]=resultSet.getString(4);
+            datos[4]=resultSet.getString(5);
+            datos[5]=resultSet.getString(6);
+            datos[6]=resultSet.getString(7);
+            datos[7]=resultSet.getString(8);
+            datos[8]=resultSet.getString(9);
+            datos[9]=resultSet.getString(10);
+            datos[10]=resultSet.getString(11);
+            datos[11]=resultSet.getString(12);
+            datos[12]=resultSet.getString(13);
+            
+            tableModel.addRow(datos);   
+        }
+        viewProveedores.jt_tablaProveedores.setModel(tableModel);       
+    }
+    catch(SQLException mDatos)  {
+        Logger.getLogger(ControllerClientes.class.getName()).log(Level.SEVERE,null, mDatos);
+    }
+    
 }
     
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        if(e.getSource()==viewProveedores.jb_agregar)   {
+            if(viewProveedores.jtf_nombreProveedor.getText().equals("")||viewProveedores.jtf_apPaterno.getText().equals("")||viewProveedores.jtf_apPaterno.getText().equals("")||viewProveedores.jtf_rfc.getText().equals("")||viewProveedores.jtf_calle.getText().equals("")||viewProveedores.jtf_colonia.getText().equals("")||viewProveedores.jtf_estado.getText().equals("")||viewProveedores.jtf_nombreContacto.getText().equals("")||viewProveedores.jtf_telefono.getText().equals("")||viewProveedores.jtf_email.getText().equals(""))   {
+                JOptionPane.showMessageDialog(viewProveedores, "Llena por completo los campos "+e);
+            }
+            else    {
+                guardar();
+                mostrarDatos("");
+                limpiar();
+            }
+        }
+        if(e.getSource()==viewProveedores.jb_eliminar)   {
+            modificar();
+        }
+
+        if(e.getSource()==viewProveedores.jb_guardar)   {
+            guardar();
+            mostrarDatos("");
+        }
+        if(e.getSource()==viewProveedores.jb_editar)    {
+            guardar();
+            mostrarDatos("");
+            limpiar();
+        }
+        if(e.getSource()==viewProveedores.jb_buscar)   {
+
+                    
+        }
     }
 }
 
